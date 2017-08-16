@@ -31,6 +31,7 @@
 				var light = new BABYLON.PointLight("Omni", new BABYLON.Vector3(0, 100, 100), scene);
 				//var camera = new BABYLON.FreeCamera("FreeCamera", new BABYLON.Vector3(0, 150, 0), scene);
 				var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 0, new BABYLON.Vector3.Zero(), scene);
+				camera.setPosition(new BABYLON.Vector3(600, 100, 0));
 				camera.attachControl(canvas, false);
 				//var ground = BABYLON.Mesh.CreateGround("ground1", 6000, 6000, 2, scene);
 				
@@ -134,14 +135,18 @@
 				}
 				
 			//hardcoded physics element constructors
-			var physicsElements = [new physicsElement(15,  0, 0, 0,  0, 0, 0, BABYLON.Mesh.CreateSphere("Box1", 16, 15, sceneInstance), "box1", false), 
-									new physicsElement(3,  100, 0, 0,  0, 0, 5, BABYLON.Mesh.CreateSphere("Box2", 16,  7, sceneInstance), "box2", true),
-									new physicsElement(2,  150, 0, 0,  0, 0, 5, BABYLON.Mesh.CreateSphere("Box3", 16,  6, sceneInstance), "box3", true),
-									new physicsElement(4,  400, 0, 0,  0, 0, 2, BABYLON.Mesh.CreateSphere("Box3", 16, 8, sceneInstance), "box3", true)									]
+			var physicsElements = [new physicsElement(15,  0, 0, 0,  0, 0, 0, BABYLON.Mesh.CreateSphere("Box1", 16, 20, sceneInstance), "box1", false), 
+									new physicsElement(3,  100, 0, 0,  0, 0, 4.2, BABYLON.Mesh.CreateSphere("Box2", 16,  10, sceneInstance), "box2", true),
+									new physicsElement(2,  -150, 0, 0,  0, 0, -4.2, BABYLON.Mesh.CreateSphere("Box3", 16,  9, sceneInstance), "box3", true),
+									new physicsElement(4,  400, 0, 0,  0, 0, 2, BABYLON.Mesh.CreateSphere("Box3", 16, 11, sceneInstance), "box3", true)									]
 			
 			physicsElements[1].graphicsElement.position.x
 			
+			var torus = BABYLON.Mesh.CreateTorus("torus", 200, .5, 60, sceneInstance, false, BABYLON.Mesh.DEFAULTSIDE);
+			var torus = BABYLON.Mesh.CreateTorus("torus", 800, .5, 60, sceneInstance, false, BABYLON.Mesh.DEFAULTSIDE);
+			
 			/** WIP implementation of trajectory tails for each physics element
+			
 			function trail = (n){
 				
 				this.vectorList = []
@@ -155,8 +160,8 @@
 					
 				], scene);
 			}
+		
 			**/
-		 
 			engine.runRenderLoop(function() {
 				sceneInstance.render();
 			});

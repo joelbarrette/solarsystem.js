@@ -1,0 +1,34 @@
+<html>
+<head>
+	<script> 
+    function scriptfail(element) {
+        alert('failed to load the following library: ' + element.src);
+    }
+	</script>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+    <title>Solarsystem.js</title>
+    <!-- libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babylonjs/2.5.0/babylon.max.js" onerror='scriptfail(this);'></script>
+	
+	<style>
+    html, body {
+        overflow: hidden;
+        width   : 100%;
+        height  : 100%;
+        margin  : 0;
+        padding : 0;
+    }
+    #renderCanvas {
+        width   : 100%;
+        height  : 100%;
+        touch-action: none;
+    }
+	</style>
+	
+</head>
+<body>
+    <canvas id="renderCanvas"></canvas>
+	<!-- loading custom js code -->
+	<script src="index.js"> </script>
+</body>
+</html>
