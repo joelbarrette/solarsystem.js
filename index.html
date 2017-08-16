@@ -36,10 +36,11 @@
 			function createScene() {
 				var scene = new BABYLON.Scene(engine);
 				var light = new BABYLON.PointLight("Omni", new BABYLON.Vector3(0, 100, 100), scene);
+				
 				//var camera = new BABYLON.FreeCamera("FreeCamera", new BABYLON.Vector3(0, 150, 0), scene);
 				var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 0, new BABYLON.Vector3.Zero(), scene);
 				camera.attachControl(canvas, false);
-				//var ground = BABYLON.Mesh.CreateGround("ground1", 6000, 6000, 2, scene);
+
 				
 				scene.clearColor = new BABYLON.Color3(1, 1, 1);
 				

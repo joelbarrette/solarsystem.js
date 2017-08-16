@@ -1,3 +1,24 @@
+/* Author Joel Barrette
+
+#### Goal: to implement an easily extensible n-body physics sandbox with an
+		   intuitive user interface that can be used for education and for fun.
+
+#### TODO:
++Decide on UI library
++Implement basic UI
++Implement element creation/destruction/manipulation
++Implement useful graphical features such as trail lines
++Determine best way to separate functionality
++Settings panel?
++Implement .csv import/export of elements
++Reimplement in typescript?
++Refine UI
++Implement more of babylon.js graphics capabilites, ie reflections + more
++Stress test to determine limits of the system
++Implement variable speed
++Implement colisions?
+*/
+
 
 	
 		window.addEventListener('DOMContentLoaded', function(){
@@ -38,7 +59,10 @@
 			
 			
 			
+			/*WIP function that is meant implement creation and destruction and editing of phsysics elements, 
+			instead of having them hardcoded as they currently are below.
 			
+			*/
 			function elementManager(){
 			
 			
@@ -93,9 +117,6 @@
 																				totalForceY += totalForce * ((this.positionY - elementList[i].positionY)/distance)
 																				totalForceZ += totalForce * ((this.positionZ - elementList[i].positionZ)/distance)
 																				}
-																			//console.log("Acceleration x = " + totalForceX/this.mass);
-																			//console.log("Acceleration y = " + totalForceY/this.mass);
-																			//console.log("Acceleration z = " + totalForceZ/this.mass);
 																			this.speedX -= totalForceX/this.mass;
 																			this.speedY -= totalForceY/this.mass;
 																			this.speedZ -= totalForceZ/this.mass;
@@ -112,8 +133,7 @@
 											
 				}
 				
-			//var physicsElements = [new physicsElement()];
-			
+			//hardcoded physics element constructors
 			var physicsElements = [new physicsElement(15,  0, 0, 0,  0, 0, 0, BABYLON.Mesh.CreateSphere("Box1", 16, 15, sceneInstance), "box1", false), 
 									new physicsElement(3,  100, 0, 0,  0, 0, 5, BABYLON.Mesh.CreateSphere("Box2", 16,  7, sceneInstance), "box2", true),
 									new physicsElement(2,  150, 0, 0,  0, 0, 5, BABYLON.Mesh.CreateSphere("Box3", 16,  6, sceneInstance), "box3", true),
@@ -121,7 +141,7 @@
 			
 			physicsElements[1].graphicsElement.position.x
 			
-			/** WIP
+			/** WIP implementation of trajectory tails for each physics element
 			function trail = (n){
 				
 				this.vectorList = []
@@ -129,13 +149,11 @@
 						vectorlist.push(new BABYLON.Vector3(-10, 0, 0),);
 					} 
 				this.railGraphic var lines = BABYLON.Mesh.CreateLines("lines", [
-					
 					new BABYLON.Vector3(10, 0, 0),
 					new BABYLON.Vector3(0, 0, -10),
 					new BABYLON.Vector3(0, 0, 10)
-], scene);
-			
-			
+					
+				], scene);
 			}
 			**/
 		 
@@ -147,7 +165,6 @@
 				engine.resize();
 			});
 			
-			//function calculateForce()
 			
 			
 			
@@ -163,7 +180,7 @@
 			}
 			
 			//Clock manager
-			var intervalID = window.setInterval(clock, 40);
+			var intervalID = window.setInterval(clock, 40); //this sets the framerate/physics rate
 			function clock (sceneInstance){
 				incrementPhysics(sceneInstance);
 			} 
