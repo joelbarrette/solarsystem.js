@@ -115,9 +115,9 @@
 			//var physicsElements = [new physicsElement()];
 			
 			var physicsElements = [new physicsElement(15,  0, 0, 0,  0, 0, 0, BABYLON.Mesh.CreateSphere("Box1", 16, 15, sceneInstance), "box1", false), 
-									new physicsElement(3,  100, 0, 0,  0, 0, 5, BABYLON.Mesh.CreateSphere("Box2", 16,  3, sceneInstance), "box2", true),
-									new physicsElement(2,  150, 0, 0,  0, 0, 5, BABYLON.Mesh.CreateSphere("Box3", 16,  2, sceneInstance), "box3", true),
-									new physicsElement(4,  400, 0, 0,  0, 0, 2, BABYLON.Mesh.CreateSphere("Box3", 16, 4, sceneInstance), "box3", true)									]
+									new physicsElement(3,  100, 0, 0,  0, 0, 5, BABYLON.Mesh.CreateSphere("Box2", 16,  7, sceneInstance), "box2", true),
+									new physicsElement(2,  150, 0, 0,  0, 0, 5, BABYLON.Mesh.CreateSphere("Box3", 16,  6, sceneInstance), "box3", true),
+									new physicsElement(4,  400, 0, 0,  0, 0, 2, BABYLON.Mesh.CreateSphere("Box3", 16, 8, sceneInstance), "box3", true)									]
 			
 			physicsElements[1].graphicsElement.position.x
 			
