@@ -1,5 +1,6 @@
 # solarsystem.js
 
+Demo: http://joelbarrette.com/solarsystem.html
 
 
 ## Goal: 
